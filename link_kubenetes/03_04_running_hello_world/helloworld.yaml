@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: karthequian/helloworld:latest
+        image: karthequian/helloworld:latest #Tells which images to pull from 
         ports:
-        - containerPort: 80
+        - containerPort: 80  # Tells which port to expose
