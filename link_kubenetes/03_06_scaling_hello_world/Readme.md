@@ -1,7 +1,7 @@
 # Scaling the helloworld app
 
 ## Chapter Goal
-1. Learn how to scale the helloworld application
+
 
 ### Learn how to scale the helloworld application
 
@@ -11,7 +11,11 @@ There are many scenarios in which this is undesired. If for some reason the pod 
 
 Fortunately, we can use the inbuilt property of Kubernetes, called replica sets, to solve this issue for deployments. 
 
-To run a replica set for our helloworld deployment, run the command `kubectl scale --replicas=3 deploy/helloworld-deployment`. This will add three replicas for our deployment, which effectively means three pods running for a single deployment.
+To run a replica set for our helloworld deployment, run below command. 
+
+`kubectl scale --replicas=3 deploy/helloworld-deployment`
+
+ This will add three replicas for our deployment, which effectively means three pods running for a single deployment.
 
 ```
 $ kubectl scale --replicas=3 deploy/helloworld-deployment
@@ -20,7 +24,7 @@ deployment "helloworld-deployment" scaled
 
 Now, if we run `kubectl get all`, we'll see three pods instead of one.
 
-```
+```bash
 $ kubectl get all
 NAME                                        READY     STATUS    RESTARTS   AGE
 po/helloworld-deployment-2148054017-6fc7f   1/1       Running   0          6h

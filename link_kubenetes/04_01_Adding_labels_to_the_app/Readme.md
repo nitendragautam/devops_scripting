@@ -1,6 +1,7 @@
 # Adding labels to the application
 
 ## Chapter Goal
+
 1. Adding labels during build time
 2. Viewing labels
 2. Adding labels to running pods
