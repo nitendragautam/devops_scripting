@@ -13,8 +13,7 @@
 
 You can add labels to pods, services and deployments either at build time or at run time. If you're adding labels at build time, you can add a label section in the metadata portion of the YAML as shown below:
 
-```
-```
+
 
 You can deploy the code above by using the command `kubectl create -f helloworld-pod-with-labels.yml`
 
@@ -23,8 +22,6 @@ You can deploy the code above by using the command `kubectl create -f helloworld
 
 You have a pod with labels. Super! But how do you see them? You can add the `--show-labels` option to your kubectl get command as shown here: `kubectl get pods --show-labels`.
 
-```
-```
 
 ### Adding labels to running pods
 To add labels to a running pod, you can use the `kubectl label` command as follows: `kubectl label po/helloworld app=helloworld`. This adds the label `app` with the value `helloworld` to the pod.
@@ -34,16 +31,14 @@ To update the value of a label, use the `--overwrite` flag in the command as fol
 ### Deleting a label
 To remove an existing label, just add a `-` to the end of the label key as follows: `kubectl label po/helloworld app-`. This will remove the app label from the helloworld pod.
 
-```
-```
+
 
 ### Searching by labels
 Creating, getting and deleting labels is nice, but the ability to search using labels helps us identify what's going on in our infrastructure better. Let's take a look. First, we're going to deploy a few pods that will constitute what a small org might have. 
 
 `kubectl create -f kubectl create -f sample-infrastructure-with-labels.yml`
 
-```
-```
+
 
 Looking at these applications running from a high level makes it hard to see what's going on with the infrastructure.
 
@@ -51,44 +46,36 @@ Looking at these applications running from a high level makes it hard to see wha
 
 `kubectl get pods --show-labels`
 
-```
-```
+
 
 You can search for labels with the flag `--selector` (or `-l`). If you want to search for all the pods that are running in production, you can run `kubectl get pods --selector env=production` as shown below:
 
 `kubectl get pods --selector env=production`
 
 
-```
-```
+
 
 Similarly, to get all pods by dev lead Karthik, you'd add `dev-lead=karthik` to the selector as shown below.
 
 `kubectl get pods --selector dev-lead=karthik`
 
-```
-```
+
 
 You can also do more complicated searches, like finding any pods owned by Karthik in the development tier, by the following query `dev-lead=karthik,env=staging`:
 
 `kubectl get pods -l dev-lead=karthik,env=staging`
 
-```
-```
 
 Or, any apps not owned by Karthik in staging (using the ! construct):
 
 `kubectl get pods -l dev-lead!=karthik,env=staging`
 
-```
-```
+
 
 Querying also supports the `in` keyword
 
 `kubectl get pods -l 'release-version in (1.0,2.0)'`
 
-```
-```
 
 Or a more complicated example:
 
@@ -108,8 +95,6 @@ Finally, sometimes your label might not have a value assigned to it, but you can
 
 `kubectl get pods -l 'release-version'`  
 
-```
-```
 
 ### Extending the label concept to deployments/services
 

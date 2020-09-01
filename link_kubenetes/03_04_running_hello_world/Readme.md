@@ -13,7 +13,7 @@ First, get minikube up and running with the command `minikube start`. This comma
 
 The last statement in the output states that kubectl can talk to minikube. We can verify this by running the command `kubectl get nodes`
 
-```kubectl get nodes``` : This command makes sure that kubectl deaemon can talk to minikube
+```kubectl get nodes``` : This command makes sure that kubectl deaemon can talk to minikube.
 
 
 

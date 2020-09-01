@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  index.html: "<html>\n    <head></head>\n    <body>\n        <p>Hello from Matt!
+    \U0001F44B</p>\n    </body>\n</html>\n"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: website

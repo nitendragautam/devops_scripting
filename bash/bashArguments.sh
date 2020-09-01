@@ -1,28 +1,34 @@
 #!/bin/bash
 
 #================================================
-#  Example: ./bashArguments.sh  Bash Scripting Tutorials
-#                                               #
+#  Example: ./bashArguments.sh args1 args2 .. ..   
+# In this Example we will read the arguments from the command Line                                          #
 #=================================================
 
+# Number of Arguments Passed to the Bash Script
+NUM_ARGS=$#
 
-#Use Predefined  Variables to Access Passed Arguments
+echo " Number of Arguments Passed: $NUM_ARGS"
 
-#echo arguments to the Shell
-
-echo $1 $2 $3 ' -> echo $1 $2 $3 '
+if [[ "$NUM_ARGS" -ge 1 ]];then
 
 #We can also store arguments from the bash command line in special array
 args=("$@")
 
-#Echo Arguments to the Shell
-echo ${args[0]} ${args[1]} ${args[2]} ' -> args=("$@"); echo ${args[0]} ${args[1]} ${args[2]} '
+    for (( i = 0; i < $NUM_ARGS; i++ ))
+    do
+        echo "Argument $i: " ${args[i]}
+    done
 
 # Use $@ to print  out all arguments at once
-echo $@ ' -> echo $@'
+echo "Printing All Arguments At Once "
+echo $@ 
 
-# Use $# Variable to print out
-# Number of Arguments Passed to the Bash Script
+else
 
-echo Number of Arguments Passed: $# ' -> echo Number of Arguments Passed: $#'
+    echo " Please Pass At least one Arguments to the Script"
+
+fi
+
+
 

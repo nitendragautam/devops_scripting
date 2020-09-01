@@ -1,0 +1,3 @@
+host: prod.example.com
+tls:
+  enabled: true
