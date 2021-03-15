@@ -16,11 +16,11 @@ print_param(){
 echo "Printing from $FUNCNAME function  "
 
 
-echo $first_param
-echo $second_param
-echo $third_param
-echo $fourth_param
-echo $fifth_param
+echo "first_param" $first_param
+echo "second_param" $second_param
+echo "third_param" $third_param
+echo "fourth_param" $fourth_param
+echo "fifth_param" $fifth_param
 
 ## Using the unset to Make the variable fifth_param dissapear when the function exits
 echo "Unsetting the Fifth Parameters "
@@ -55,5 +55,5 @@ echo "Preset Working Directory $PWD"
 
 echo "Random Number $RANDOM"
 
-echo ""
+echo "Displaying Path "
 echo "$PATH"
