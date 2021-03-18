@@ -62,4 +62,5 @@ echo "My Name is $first_name $last_name"
 
 }
 
+## Call printMyName Function with First Name and Last Name
 printMyName Nitendra Gautam
